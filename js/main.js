@@ -1,5 +1,5 @@
-let cookies;
-let cursors;
+let cookies = 0;
+let cursors = 0;
 let lastActive;
 
 var savegame = JSON.parse(localStorage.getItem("save"));
