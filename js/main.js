@@ -4,9 +4,15 @@ let lastActive;
 
 var savegame = JSON.parse(localStorage.getItem("save"));
 
-if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
-if (typeof savegame.cursors !== "undefined") cursors = savegame.cursors;
-if (typeof savegame.lastActive !== "undefined") lastActive = savegame.lastActive;
+try {
+    if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
+    if (typeof savegame.cursors !== "undefined") cursors = savegame.cursors;
+    if (typeof savegame.lastActive !== "undefined") lastActive = savegame.lastActive;
+} 
+
+catch (error) {
+    console.log(error);
+}
 
 var save = {
     cookies: cookies,
